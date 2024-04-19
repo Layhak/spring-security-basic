@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: spring_security_basic
+  profiles:
+    active: dev
