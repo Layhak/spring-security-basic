@@ -13,7 +13,7 @@ import java.util.Set;
 @NoArgsConstructor
 @Table(name = "users_tbl")
 public class User {
-    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @ManyToMany( fetch = FetchType.EAGER)
     Set<Role> roles;
 
     @Id
@@ -22,4 +22,9 @@ public class User {
     @Column(unique = true)
     private String email;
     private String password;
+
+    private boolean isDisabled;
+    private boolean isAccountLocked;
+    private boolean isAccountExpired;
+    private boolean isCredentialExpired;
 }

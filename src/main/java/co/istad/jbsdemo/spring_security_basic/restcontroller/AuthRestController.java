@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class AuthRestController {
     private final UserService userService;
 
-
     @PostMapping("/register")
     public BaseResponse<UserResponse> createNewUser(@RequestBody UserRequest request) {
         return  BaseResponse.<UserResponse>createSuccess().setPayload(userService.createUser(request));
